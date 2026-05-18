@@ -257,9 +257,10 @@ function sendData(data) {
   }
 
   // sendBeacon 우선 (페이지 이동해도 끝까지 전송됨, 모바일 안정적)
+  // text/plain으로 보내야 CORS preflight 안 일어남
   if (navigator.sendBeacon) {
     try {
-      const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+      const blob = new Blob([JSON.stringify(data)], { type: 'text/plain;charset=utf-8' });
       const ok = navigator.sendBeacon(APPS_SCRIPT_URL, blob);
       if (ok) {
         console.log('✅ sendBeacon 전송 성공');
@@ -270,12 +271,11 @@ function sendData(data) {
     }
   }
 
-  // 폴백: fetch with keepalive
+  // 폴백: fetch with keepalive (헤더 없이 - preflight 회피)
   fetch(APPS_SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
     keepalive: true,
-    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   }).then(() => {
     console.log('✅ fetch 전송 완료');
