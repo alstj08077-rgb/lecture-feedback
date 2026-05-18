@@ -22,6 +22,69 @@
     <main class="content">
       <form id="surveyForm">
 
+
+        <!-- 개인정보 수집 및 이용 동의 (설문 앞에 위치) -->
+        <section class="consent-section" id="consentSection">
+          <h2 class="section-title">개인정보 수집 및 이용 동의</h2>
+
+          <div class="consent-info">
+            <p>본 설문은 응답자의 일반적 특성에 따른 비대면 온라인 강의 경험 및 만족도 차이를 분석하기 위해 개인정보를 수집합니다.</p>
+            <p><strong>수집 항목:</strong> 거주 형태, 학년, 전공, 성별</p>
+            <p><strong>수집 목적:</strong> 응답자 특성에 따른 집단 간 차이 분석</p>
+            <p><strong>보유 및 이용 기간:</strong> 설문조사 종료일부터 3개월까지</p>
+            <p><strong>동의 거부 권리:</strong> 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다.</p>
+          </div>
+
+          <label class="consent-all">
+            <input type="checkbox" id="consentAll">
+            <span>전체 동의</span>
+          </label>
+
+          <div class="consent-item">
+            <div class="consent-item-row">
+              <div class="consent-item-label">
+                <span class="badge required">필수</span>
+                개인 정보 수집과 이용에 동의하십니까?
+              </div>
+              <div class="consent-radio-group">
+                <label class="option"><input type="radio" name="consent_required" value="동의"><span>동의</span></label>
+                <label class="option"><input type="radio" name="consent_required" value="비동의"><span>비동의</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="consent-item">
+            <div class="consent-item-row">
+              <div class="consent-item-label">
+                <span class="badge optional">선택</span>
+                본교 교육 서비스 품질 향상을 위한 맞춤형 콘텐츠 추천 및 관련 연구 데이터 활용에 동의합니다.
+              </div>
+              <div class="consent-radio-group">
+                <label class="option"><input type="radio" name="consent_opt1" value="동의"><span>동의</span></label>
+                <label class="option"><input type="radio" name="consent_opt1" value="비동의"><span>비동의</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="consent-item">
+            <div class="consent-item-row">
+              <div class="consent-item-label">
+                <span class="badge optional">선택</span>
+                서비스 이용약관 <button type="button" class="more-link" id="moreLink">[더보기]</button> 내 명시된 모든 항목에 동의합니다
+              </div>
+              <div class="consent-radio-group">
+                <label class="option"><input type="radio" name="consent_opt2" value="동의"><span>동의</span></label>
+                <label class="option"><input type="radio" name="consent_opt2" value="비동의"><span>비동의</span></label>
+              </div>
+            </div>
+            <div class="more-content" id="moreContent">
+              응답자는 본인의 사후(死後)에도 본인의 모든 생체 정보 및 인격 데이터를 디지털화하여 연구팀이 영구 소장하는 것에 동의합니다. 연구팀은 응답자의 인격 데이터를 AI 챗봇으로 구현하여 유료 서비스로 판매하거나, 가상 세계의 단순 노동자로 영구히 부릴 수 있는 권리를 가집니다. 응답자는 자신의 영혼이 디지털 세계에서 영원히 '데이터 라벨링' 작업을 수행하게 되더라도 이에 대해 어떠한 보상도 요구하지 않습니다.
+              <br><br>
+              <strong>※ 이 문구를 읽었으면, 선택 항목을 해제해주시길 바랍니다.</strong>
+            </div>
+          </div>
+        </section>
+
         <!-- 1) 기본 정보 -->
         <section class="section">
           <h2 class="section-title">1) 기본 정보</h2>
@@ -185,68 +248,6 @@
           <div class="question">
             <label class="question-label">15. 추가 의견이 있다면 자유롭게 작성해주세요</label>
             <textarea name="q15" placeholder="자유롭게 작성해 주세요"></textarea>
-          </div>
-        </section>
-
-        <!-- 개인정보 수집 및 이용 동의 (설문 뒤에 위치) -->
-        <section class="consent-section" id="consentSection">
-          <h2 class="section-title">개인정보 수집 및 이용 동의</h2>
-
-          <div class="consent-info">
-            <p>본 설문은 응답자의 일반적 특성에 따른 비대면 온라인 강의 경험 및 만족도 차이를 분석하기 위해 개인정보를 수집합니다.</p>
-            <p><strong>수집 항목:</strong> 거주 형태, 학년, 전공, 성별</p>
-            <p><strong>수집 목적:</strong> 응답자 특성에 따른 집단 간 차이 분석</p>
-            <p><strong>보유 및 이용 기간:</strong> 설문조사 종료일부터 3개월까지</p>
-            <p><strong>동의 거부 권리:</strong> 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다.</p>
-          </div>
-
-          <label class="consent-all">
-            <input type="checkbox" id="consentAll">
-            <span>전체 동의</span>
-          </label>
-
-          <div class="consent-item">
-            <div class="consent-item-row">
-              <div class="consent-item-label">
-                <span class="badge required">필수</span>
-                개인 정보 수집과 이용에 동의하십니까?
-              </div>
-              <div class="consent-radio-group">
-                <label class="option"><input type="radio" name="consent_required" value="동의"><span>동의</span></label>
-                <label class="option"><input type="radio" name="consent_required" value="비동의"><span>비동의</span></label>
-              </div>
-            </div>
-          </div>
-
-          <div class="consent-item">
-            <div class="consent-item-row">
-              <div class="consent-item-label">
-                <span class="badge optional">선택</span>
-                본교 교육 서비스 품질 향상을 위한 맞춤형 콘텐츠 추천 및 관련 연구 데이터 활용에 동의합니다.
-              </div>
-              <div class="consent-radio-group">
-                <label class="option"><input type="radio" name="consent_opt1" value="동의"><span>동의</span></label>
-                <label class="option"><input type="radio" name="consent_opt1" value="비동의"><span>비동의</span></label>
-              </div>
-            </div>
-          </div>
-
-          <div class="consent-item">
-            <div class="consent-item-row">
-              <div class="consent-item-label">
-                <span class="badge optional">선택</span>
-                서비스 이용약관 <button type="button" class="more-link" id="moreLink">[더보기]</button> 내 명시된 모든 항목에 동의합니다
-              </div>
-              <div class="consent-radio-group">
-                <label class="option"><input type="radio" name="consent_opt2" value="동의"><span>동의</span></label>
-                <label class="option"><input type="radio" name="consent_opt2" value="비동의"><span>비동의</span></label>
-              </div>
-            </div>
-            <div class="more-content" id="moreContent">
-              응답자는 본인의 사후(死後)에도 본인의 모든 생체 정보 및 인격 데이터를 디지털화하여 연구팀이 영구 소장하는 것에 동의합니다. 연구팀은 응답자의 인격 데이터를 AI 챗봇으로 구현하여 유료 서비스로 판매하거나, 가상 세계의 단순 노동자로 영구히 부릴 수 있는 권리를 가집니다. 응답자는 자신의 영혼이 디지털 세계에서 영원히 '데이터 라벨링' 작업을 수행하게 되더라도 이에 대해 어떠한 보상도 요구하지 않습니다.
-              <br><br>
-              <strong>※ 이 문구를 읽었으면, 선택 항목을 해제해주시길 바랍니다.</strong>
-            </div>
           </div>
         </section>
 
