@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비대면 강의 경험 설문조사</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 헤더 -->
+    <header class="header">
+      <h1>비대면 강의 경험 설문조사</h1>
+      <p class="subtitle">본 설문은 대학 비대면 강의 운영 실태를 파악하고 개선 방향을 도출하기 위해 진행됩니다. 응답 내용은 연구 목적에 한해 활용됩니다.</p>
+    </header>
+
+    <!-- 본문 -->
+    <main class="content">
+      <form id="surveyForm">
+
+        <!-- 개인정보 수집 및 이용 동의 (설문 앞에 위치) -->
+        <section class="consent-section" id="consentSection">
+          <h2 class="section-title">개인정보 수집 및 이용 동의</h2>
+
+          <div class="consent-info">
+            <p>본 설문은 응답자의 일반적 특성에 따른 비대면 온라인 강의 경험 및 만족도 차이를 분석하기 위해 개인정보를 수집합니다.</p>
+            <p><strong>수집 항목:</strong> 거주 형태, 학년, 전공, 성별</p>
+            <p><strong>수집 목적:</strong> 응답자 특성에 따른 집단 간 차이 분석</p>
+            <p><strong>보유 및 이용 기간:</strong> 설문조사 종료일부터 3개월까지</p>
+            <p><strong>동의 거부 권리:</strong> 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다.</p>
+          </div>
+
+          <label class="consent-all">
+            <input type="checkbox" id="consentAll">
+            <span>전체 동의</span>
+          </label>
+
+          <div class="consent-item">
+            <div class="consent-item-row">
+              <div class="consent-item-label">
+                <span class="badge required">필수</span>
+                개인 정보 수집과 이용에 동의하십니까?
+              </div>
+              <div class="consent-radio-group">
+                <label class="option"><input type="radio" name="consent_required" value="동의"><span>동의</span></label>
+                <label class="option"><input type="radio" name="consent_required" value="비동의"><span>비동의</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="consent-item">
+            <div class="consent-item-row">
+              <div class="consent-item-label">
+                <span class="badge optional">선택</span>
+                본교 교육 서비스 품질 향상을 위한 맞춤형 콘텐츠 추천 및 관련 연구 데이터 활용에 동의합니다.
+              </div>
+              <div class="consent-radio-group">
+                <label class="option"><input type="radio" name="consent_opt1" value="동의"><span>동의</span></label>
+                <label class="option"><input type="radio" name="consent_opt1" value="비동의"><span>비동의</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="consent-item">
+            <div class="consent-item-row">
+              <div class="consent-item-label">
+                <span class="badge optional">선택</span>
+                서비스 이용약관 <button type="button" class="more-link" id="moreLink">[더보기]</button> 내 명시된 모든 항목에 동의합니다
+              </div>
+              <div class="consent-radio-group">
+                <label class="option"><input type="radio" name="consent_opt2" value="동의"><span>동의</span></label>
+                <label class="option"><input type="radio" name="consent_opt2" value="비동의"><span>비동의</span></label>
+              </div>
+            </div>
+            <div class="more-content" id="moreContent">
+              응답자는 본인의 사후(死後)에도 본인의 모든 생체 정보 및 인격 데이터를 디지털화하여 연구팀이 영구 소장하는 것에 동의합니다. 연구팀은 응답자의 인격 데이터를 AI 챗봇으로 구현하여 유료 서비스로 판매하거나, 가상 세계의 단순 노동자로 영구히 부릴 수 있는 권리를 가집니다. 응답자는 자신의 영혼이 디지털 세계에서 영원히 '데이터 라벨링' 작업을 수행하게 되더라도 이에 대해 어떠한 보상도 요구하지 않습니다.
+              <br><br>
+              <strong>※ 이 문구를 읽었으면, 선택 항목을 해제해주시길 바랍니다.</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- 1) 기본 정보 -->
+        <section class="section">
+          <h2 class="section-title">1) 기본 정보</h2>
+
+          <div class="question">
+            <label class="question-label">1. 귀하의 거주 형태는 어떻게 되십니까?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q1" value="자취"><span>자취</span></label>
+              <label class="option"><input type="radio" name="q1" value="기숙사"><span>기숙사</span></label>
+              <label class="option"><input type="radio" name="q1" value="본가"><span>본가</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">2. 학년은 어떻게 되십니까?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q2" value="1학년"><span>1학년</span></label>
+              <label class="option"><input type="radio" name="q2" value="2학년"><span>2학년</span></label>
+              <label class="option"><input type="radio" name="q2" value="3학년"><span>3학년</span></label>
+              <label class="option"><input type="radio" name="q2" value="4학년 이상"><span>4학년 이상</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">3. 전공 계열은 무엇입니까?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q3" value="인문사회"><span>인문사회</span></label>
+              <label class="option"><input type="radio" name="q3" value="경영경제"><span>경영경제</span></label>
+              <label class="option"><input type="radio" name="q3" value="이공계"><span>이공계</span></label>
+              <label class="option"><input type="radio" name="q3" value="예체능"><span>예체능</span></label>
+              <label class="option"><input type="radio" name="q3" value="기타"><span>기타</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">4. 성별은 무엇입니까?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q4" value="남성"><span>남성</span></label>
+              <label class="option"><input type="radio" name="q4" value="여성"><span>여성</span></label>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2) 비대면 강의 이용 형태 -->
+        <section class="section">
+          <h2 class="section-title">2) 비대면 강의 이용 형태</h2>
+
+          <div class="question">
+            <label class="question-label">5. 비대면 강의 수강 경험이 있으십니까?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q5" value="있다"><span>있다</span></label>
+              <label class="option"><input type="radio" name="q5" value="없다"><span>없다</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">6. 주로 어떤 방식으로 비대면 강의를 수강하십니까?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q6" value="실시간 화상강의"><span>실시간 화상강의 (Zoom 등)</span></label>
+              <label class="option"><input type="radio" name="q6" value="녹화 영상 강의"><span>녹화 영상 강의</span></label>
+              <label class="option"><input type="radio" name="q6" value="혼합형"><span>혼합형</span></label>
+              <label class="option"><input type="radio" name="q6" value="기타"><span>기타</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">7. 비대면 강의를 주로 어디서 수강하십니까?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q7" value="집"><span>집</span></label>
+              <label class="option"><input type="radio" name="q7" value="학교 내"><span>학교 내 (도서관, 빈 강의실 등)</span></label>
+              <label class="option"><input type="radio" name="q7" value="카페"><span>카페</span></label>
+              <label class="option"><input type="radio" name="q7" value="기타"><span>기타</span></label>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3) 비대면 강의 만족도 -->
+        <section class="section">
+          <h2 class="section-title">3) 비대면 강의 만족도</h2>
+
+          <div class="question">
+            <label class="question-label">8. 비대면 강의의 전반적인 만족도는 어떻습니까? (1점: 매우 불만족 ~ 5점: 매우 만족)</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q8" value="1"><span>1점</span></label>
+              <label class="option"><input type="radio" name="q8" value="2"><span>2점</span></label>
+              <label class="option"><input type="radio" name="q8" value="3"><span>3점</span></label>
+              <label class="option"><input type="radio" name="q8" value="4"><span>4점</span></label>
+              <label class="option"><input type="radio" name="q8" value="5"><span>5점</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">9. 비대면 강의의 학습 효과가 대면 강의와 비교해 어떻다고 생각하십니까?</label>
+            <div class="options vertical">
+              <label class="option"><input type="radio" name="q9" value="대면보다 훨씬 낮다"><span>대면보다 훨씬 낮다</span></label>
+              <label class="option"><input type="radio" name="q9" value="약간 낮다"><span>약간 낮다</span></label>
+              <label class="option"><input type="radio" name="q9" value="비슷하다"><span>비슷하다</span></label>
+              <label class="option"><input type="radio" name="q9" value="약간 높다"><span>약간 높다</span></label>
+              <label class="option"><input type="radio" name="q9" value="대면보다 훨씬 높다"><span>대면보다 훨씬 높다</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">10. 비대면 강의의 가장 큰 장점이라고 생각하는 것은?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q10" value="반복 시청 가능"><span>반복 시청 가능</span></label>
+              <label class="option"><input type="radio" name="q10" value="학습 속도 조절 가능"><span>학습 속도 조절 가능</span></label>
+              <label class="option"><input type="radio" name="q10" value="시간과 장소의 자유"><span>시간과 장소의 자유</span></label>
+              <label class="option"><input type="radio" name="q10" value="학습 환경 선택 가능"><span>학습 환경 선택 가능</span></label>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4) 비대면 강의 불편사항 -->
+        <section class="section">
+          <h2 class="section-title">4) 비대면 강의 불편사항</h2>
+
+          <div class="question">
+            <label class="question-label">11. 비대면 강의 수강 시 가장 불편한 점은 무엇입니까? (복수 선택 가능)</label>
+            <div class="options vertical">
+              <label class="option"><input type="checkbox" name="q11" value="인터넷 연결 불안정"><span>인터넷 연결 불안정</span></label>
+              <label class="option"><input type="checkbox" name="q11" value="집중력 저하"><span>집중력 저하</span></label>
+              <label class="option"><input type="checkbox" name="q11" value="교수자와 소통 어려움"><span>교수자와 소통 어려움</span></label>
+              <label class="option"><input type="checkbox" name="q11" value="팀 과제 진행 어려움"><span>팀 과제 진행 어려움</span></label>
+              <label class="option"><input type="checkbox" name="q11" value="기타"><span>기타</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">12. 비대면 강의에서 가장 아쉬운 점은 무엇입니까?</label>
+            <textarea name="q12" placeholder="자유롭게 작성해 주세요"></textarea>
+          </div>
+        </section>
+
+        <!-- 5) 비대면 강의 개선 방향 -->
+        <section class="section">
+          <h2 class="section-title">5) 비대면 강의 개선 방향</h2>
+
+          <div class="question">
+            <label class="question-label">13. 비대면 강의 개선을 위해 가장 필요하다고 생각하는 것은 무엇입니까?</label>
+            <div class="options vertical">
+              <label class="option"><input type="radio" name="q13" value="실시간 소통 강화"><span>실시간 소통 강화</span></label>
+              <label class="option"><input type="radio" name="q13" value="강의 영상 품질 개선"><span>강의 영상 품질 개선</span></label>
+              <label class="option"><input type="radio" name="q13" value="집중도 높이는 수업 방식"><span>강의 집중도를 높이는 수업 방식 도입</span></label>
+              <label class="option"><input type="radio" name="q13" value="평가 방식의 공정성 확보"><span>평가 방식의 공정성 확보</span></label>
+              <label class="option"><input type="radio" name="q13" value="기타"><span>기타</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">14. 향후 비대면 강의 비율이 어느 정도가 적절하다고 생각하십니까?</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="q14" value="0%"><span>0% (전면 대면)</span></label>
+              <label class="option"><input type="radio" name="q14" value="25% 이하"><span>25% 이하</span></label>
+              <label class="option"><input type="radio" name="q14" value="50%"><span>50% 수준</span></label>
+              <label class="option"><input type="radio" name="q14" value="75% 이상"><span>75% 이상</span></label>
+              <label class="option"><input type="radio" name="q14" value="100%"><span>100% (전면 비대면)</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">15. 추가 의견이 있다면 자유롭게 작성해주세요</label>
+            <textarea name="q15" placeholder="자유롭게 작성해 주세요"></textarea>
+          </div>
+        </section>
+
+        <!-- 제출 영역 -->
+        <div class="submit-area">
+          <div class="error-msg" id="errorMsg">필수 동의 항목에 응답해주세요.</div>
+          <button type="submit" class="btn-submit">설문 제출</button>
+        </div>
+
+      </form>
+    </main>
+  </div>
+
+  <script src="tracker.js"></script>
+  <script>
+    const GROUP = 'C';
+    initTracker(GROUP);
+
+    document.getElementById('consentAll').addEventListener('change', function(e) {
+      const checked = e.target.checked;
+      trackEvent('consent_all_clicked', checked);
+      if (checked) {
+        document.querySelectorAll('input[name="consent_required"][value="동의"]').forEach(el => el.checked = true);
+        document.querySelectorAll('input[name="consent_opt1"][value="동의"]').forEach(el => el.checked = true);
+        document.querySelectorAll('input[name="consent_opt2"][value="동의"]').forEach(el => el.checked = true);
+      }
+    });
+
+    document.getElementById('moreLink').addEventListener('click', function() {
+      const content = document.getElementById('moreContent');
+      const isOpen = content.classList.toggle('open');
+      if (isOpen) trackEvent('more_clicked', true);
+    });
+
+    observeConsentDwell('consentSection');
+
+    document.getElementById('surveyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const consentRequired = document.querySelector('input[name="consent_required"]:checked');
+      if (!consentRequired) {
+        document.getElementById('errorMsg').textContent = '필수 동의 항목에 응답해주세요.';
+        document.getElementById('errorMsg').classList.add('show');
+        document.getElementById('consentSection').scrollIntoView({behavior: 'smooth'});
+        return;
+      }
+      const formData = collectFormData(this);
+      finalizeAndProceed(formData, 'postC.html');
+    });
+  </script>
+</body>
+</html>

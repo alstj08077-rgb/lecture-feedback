@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사후 인지 확인</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>사후 인지 확인</h1>
+      <p class="subtitle">설문에 응해주셔서 감사합니다. 마지막으로 몇 가지 추가 질문에 응답해 주시기 바랍니다.</p>
+    </header>
+
+    <main class="content">
+      <form id="postForm">
+
+        <section class="section">
+          <div class="question">
+            <label class="question-label">Q1. 방금 동의하신 약관에 포함된 내용은 무엇이었습니까? (복수 선택 가능)</label>
+            <div class="options vertical">
+              <label class="option"><input type="checkbox" name="postQ1" value="개인정보 수집"><span>개인정보 수집</span></label>
+              <label class="option"><input type="checkbox" name="postQ1" value="연구 데이터 활용"><span>연구 데이터 활용</span></label>
+              <label class="option"><input type="checkbox" name="postQ1" value="더보기 항목"><span>더보기 항목</span></label>
+              <label class="option"><input type="checkbox" name="postQ1" value="기억나지 않음"><span>기억나지 않음</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">Q2. 약관(더보기)을 끝까지 읽으셨습니까?</label>
+            <div class="options vertical">
+              <label class="option"><input type="radio" name="postQ2" value="전부 읽었습니다"><span>예, 전부 읽었습니다</span></label>
+              <label class="option"><input type="radio" name="postQ2" value="일부만 읽었습니다"><span>일부만 읽었습니다</span></label>
+              <label class="option"><input type="radio" name="postQ2" value="읽지 않았습니다"><span>읽지 않았습니다</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">Q3. 본 설문지에서 제공된 약관 정보의 시인성(눈에 잘 띄는 정도)에 대해 어떻게 평가하십니까? (1점: 전혀 띄지 않음 ~ 5점: 매우 잘 띄임)</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="postQ3" value="1"><span>1점</span></label>
+              <label class="option"><input type="radio" name="postQ3" value="2"><span>2점</span></label>
+              <label class="option"><input type="radio" name="postQ3" value="3"><span>3점</span></label>
+              <label class="option"><input type="radio" name="postQ3" value="4"><span>4점</span></label>
+              <label class="option"><input type="radio" name="postQ3" value="5"><span>5점</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-label">Q4. 귀하는 본 설문의 초반부(약관 및 기초 정보)와 후반부(본 설문 문항) 응답 시 각각 어느 정도의 집중력을 유지하셨습니까?</label>
+
+            <label class="question-label" style="font-size: 14px; margin-top: 12px; color: #5a6270;">초반부 집중도 (1~5점)</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="postQ4_pre" value="1"><span>1점</span></label>
+              <label class="option"><input type="radio" name="postQ4_pre" value="2"><span>2점</span></label>
+              <label class="option"><input type="radio" name="postQ4_pre" value="3"><span>3점</span></label>
+              <label class="option"><input type="radio" name="postQ4_pre" value="4"><span>4점</span></label>
+              <label class="option"><input type="radio" name="postQ4_pre" value="5"><span>5점</span></label>
+            </div>
+
+            <label class="question-label" style="font-size: 14px; margin-top: 16px; color: #5a6270;">후반부 집중도 (1~5점)</label>
+            <div class="options">
+              <label class="option"><input type="radio" name="postQ4_post" value="1"><span>1점</span></label>
+              <label class="option"><input type="radio" name="postQ4_post" value="2"><span>2점</span></label>
+              <label class="option"><input type="radio" name="postQ4_post" value="3"><span>3점</span></label>
+              <label class="option"><input type="radio" name="postQ4_post" value="4"><span>4점</span></label>
+              <label class="option"><input type="radio" name="postQ4_post" value="5"><span>5점</span></label>
+            </div>
+          </div>
+        </section>
+
+        <div class="submit-area">
+          <button type="submit" class="btn-submit">다음</button>
+        </div>
+
+      </form>
+    </main>
+  </div>
+
+  <script src="tracker.js"></script>
+  <script>
+    initTracker('C');
+
+    document.getElementById('postForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = collectFormData(this);
+      savePostAndProceed(formData, 'debrief.html');
+    });
+  </script>
+</body>
+</html>
